@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -34,3 +35,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Documentation (move to docs/ folder - excluded from production)
+/docs/
+
+# Temporary SQL files (keep only essential setup files)
+# Keep: SUPABASE_SQL_SCRIPTS.sql, CREATE_CONTENT_TABLES.sql
+*.sql.bak
+*_TEMP.sql

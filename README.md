@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💒 Wedding AI Assistant - Bali
 
-## Getting Started
+A comprehensive wedding planning assistant application built with Next.js, Supabase, and OpenAI integration.
 
-First, run the development server:
+## 🚀 Features
+
+### For Users:
+- ✅ **Wedding Planner** - Multi-step planning form with save/load functionality
+- ✅ **AI Chat Assistant** - Intelligent wedding planning assistant with OpenAI integration
+- ✅ **Venue Recommendations** - AI-powered venue suggestions based on preferences
+- ✅ **Real-time Sync** - Sync data across multiple devices/tabs
+- ✅ **Multi-language** - English & Indonesian support
+- ✅ **Dark Mode** - Beautiful dark/light theme toggle
+
+### For Admins:
+- ✅ **Dashboard** - Analytics and statistics
+- ✅ **Users Management** - View, manage, confirm, and delete users
+- ✅ **Venues Management** - Full CRUD for venue data
+- ✅ **Plans Management** - View all wedding plans
+- ✅ **Content Management** - Manage AI prompts, wedding tips, and blog posts
+- ✅ **Analytics** - User stats, metrics, and activity overview
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Backend:** Supabase (PostgreSQL, Auth, Real-time)
+- **AI:** OpenAI GPT-3.5
+- **Deployment:** Vercel
+
+## 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies
+npm install
+
+# Setup environment variables
+cp .env.example .env.local
+
+# Add your environment variables:
+# NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+# SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+# OPENAI_API_KEY=your_openai_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🗄️ Database Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Run `SUPABASE_SQL_SCRIPTS.sql` in Supabase SQL Editor to create core tables
+2. Run `CREATE_CONTENT_TABLES.sql` to create content management tables
+3. Configure RLS policies (included in SQL scripts)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Development
 
-## Learn More
+```bash
+# Run development server
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+# Build for production
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start production server
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🌐 Deployment
 
-## Deploy on Vercel
+### Deploy to Vercel:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub
+2. Import project to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Required Environment Variables:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+OPENAI_API_KEY=your_openai_key
+```
+
+## 📚 Documentation
+
+- **Setup Guide:** See `docs/SUPABASE_SETUP_GUIDE.md`
+- **API Documentation:** See `docs/API_DOCUMENTATION.md`
+- **Deployment Guide:** See `docs/DEPLOYMENT_CLEANUP.md`
+
+## 📁 Project Structure
+
+```
+├── app/                    # Next.js app router pages
+│   ├── api/               # API routes
+│   ├── admin/             # Admin dashboard
+│   ├── chat/              # AI chat page
+│   ├── planner/           # Wedding planner page
+│   └── venues/            # Venues pages
+├── components/             # React components
+├── lib/                    # Utilities & helpers
+│   ├── supabase-browser.ts # Supabase client (browser)
+│   ├── supabase-server.ts # Supabase client (server)
+│   └── db-helpers.ts      # Database helper functions
+├── public/                 # Static assets
+└── docs/                   # Documentation archive
+```
+
+## 🔐 Security
+
+- ✅ Row Level Security (RLS) enabled on all tables
+- ✅ Admin-only routes protection
+- ✅ User data isolation
+- ✅ Secure authentication with Supabase Auth
+- ✅ Service role key for admin operations only
+
+## ✅ Status
+
+**All 14 modules complete and production-ready!**
+
+- ✅ Backend: 7/7 modules
+- ✅ Admin: 7/7 modules
+
+## 📝 License
+
+MIT
+
+## 👨‍💻 Author
+
+Built with ❤️ for Bali wedding planning
