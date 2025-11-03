@@ -66,21 +66,44 @@ npm start
 
 ## 🌐 Deployment
 
-### Deploy to Vercel:
+### Quick Deploy to Vercel:
 
-1. Push your code to GitHub
-2. Import project to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy!
+**Repository sudah di GitHub:** `https://github.com/kkdev20/wedding-ai-assistant.git`
+
+#### Steps:
+
+1. **Login ke Vercel:**
+   - Buka https://vercel.com
+   - Login dengan GitHub account
+
+2. **Import Project:**
+   - Klik **"Add New"** → **"Project"**
+   - Pilih repository: `kkdev20/wedding-ai-assistant`
+   - Klik **"Import"**
+
+3. **Set Environment Variables:**
+   - Tambahkan semua variables di bawah ini di Vercel dashboard
+   - Pastikan pilih: ✅ Production, ✅ Preview, ✅ Development
+
+4. **Deploy:**
+   - Klik **"Deploy"**
+   - Tunggu build selesai (~2-5 menit)
+
+📖 **Panduan lengkap:** Lihat `docs/VERCEL_DEPLOYMENT_GUIDE.md`
 
 ### Required Environment Variables:
 
-```
+```bash
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 OPENAI_API_KEY=your_openai_key
 ```
+
+**💡 Tips:** 
+- Semua variables bisa diambil dari `.env.local` di local project
+- Supabase keys: Dashboard → Settings → API
+- OpenAI key: https://platform.openai.com/api-keys
 
 ## 📚 Documentation
 
