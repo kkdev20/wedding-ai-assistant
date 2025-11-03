@@ -101,10 +101,16 @@ export default function AuthButton({ className = '' }: AuthButtonProps) {
     }
     
     try {
+      // Get current origin (production or localhost)
+      const redirectTo = typeof window !== 'undefined' 
+        ? `${window.location.origin}/auth/callback`
+        : 'https://wedding-ai-assistant-7zmpmv4jt-kkdev20s-projects.vercel.app/auth/callback';
+
       const { data, error } = await supabase.auth.signUp({
         email: email.trim(),
         password,
         options: {
+          emailRedirectTo: redirectTo,
           data: {
             name: name || email.split('@')[0],
           },
